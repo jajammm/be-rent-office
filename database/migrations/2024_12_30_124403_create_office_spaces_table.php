@@ -16,8 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('thumbnail');
             $table->string('address');
+            $table->string('featured_facility');
             $table->boolean('is_open');
             $table->boolean('is_full_booked');
+            $table->boolean('popular');
+            $table->unsignedInteger('rating');
             $table->unsignedInteger('price');
             $table->unsignedInteger('duration');
             $table->text('about');

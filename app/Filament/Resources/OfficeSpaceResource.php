@@ -40,6 +40,9 @@ class OfficeSpaceResource extends Resource
                     ->rows(10)
                     ->cols(20)
                     ->required(),
+                Forms\Components\TextInput::make('featured_facility')
+                    ->maxLength(255)
+                    ->required(),
                 Forms\Components\Repeater::make('photos')
                     ->relationship('photos')
                     ->schema([
@@ -61,6 +64,11 @@ class OfficeSpaceResource extends Resource
                 Forms\Components\TextInput::make('price')
                     ->prefix('IDR')
                     ->required(),
+                Forms\Components\TextInput::make('rating')
+                    ->numeric()
+                    ->minLength(1)
+                    ->maxLength(5)
+                    ->required(),
                 Forms\Components\TextInput::make('duration')
                     ->numeric()
                     ->prefix('Days')    
@@ -75,6 +83,12 @@ class OfficeSpaceResource extends Resource
                     ->options([
                         true => 'Not Available',
                         false => 'Available',
+                    ])
+                    ->required(),
+                Forms\Components\Select::make('popular')
+                    ->options([
+                        true => 'Well-known',
+                        false => 'Less-known',
                     ])
                     ->required(),
             ]);
