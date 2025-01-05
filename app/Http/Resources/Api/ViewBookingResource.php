@@ -17,6 +17,7 @@ class ViewBookingResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'phone_number' => $this->phone_number,
             'booking_trx_id' => $this->booking_trx_id,
             'is_paid' => $this->is_paid,
             'duration' => $this->duration,
